@@ -1,0 +1,14 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/awsdb?serverTimezone=Asia/Seoul
+    username: jus
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
