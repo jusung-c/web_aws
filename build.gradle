@@ -33,6 +33,9 @@ dependencies {
 
     // MySQL JDBC 드라이버
     implementation 'mysql:mysql-connector-java:8.0.28'
+
+    // mustache
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
 }
 
 tasks.named('test') {
