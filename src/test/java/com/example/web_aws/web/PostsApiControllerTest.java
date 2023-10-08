@@ -5,6 +5,8 @@ import com.example.web_aws.domain.posts.PostsRepository;
 import com.example.web_aws.web.dto.PostsSaveRequestDto;
 import com.example.web_aws.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -35,9 +37,9 @@ public class PostsApiControllerTest {
     @Autowired
     private PostsRepository postsRepository;
 
-    @After
-    public void testDown() throws Exception {
-        postsRepository.deleteAll();
+    @AfterEach
+    void testDown() {
+        postsRepository.deleteAllInBatch();
     }
 
     @Test
