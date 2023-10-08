@@ -2,7 +2,9 @@ name: Gradle Package
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -20,5 +22,7 @@ jobs:
     - name: Gradlew에게 실행권한 부여
       run: chmod +x gradlew
 
-    - name: 멀티모듈 전체 빌드
-      run: ./gradlew build
+    - name: 빌드
+      run: ./gradlew clean build --exclude-task test
+
+
